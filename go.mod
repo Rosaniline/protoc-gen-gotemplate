@@ -1,4 +1,4 @@
-module moul.io/protoc-gen-gotemplate
+module github.com/Rosaniline/protoc-gen-gotemplate
 
 require (
 	github.com/Masterminds/semver v1.2.2 // indirect
