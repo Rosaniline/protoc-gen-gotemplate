@@ -49,6 +49,7 @@ func main() {
 		all               = false
 		singlePackageMode = false
 		fileMode          = false
+		buildDependency   = true
 	)
 	if parameter := g.Request.GetParameter(); parameter != "" {
 		for _, param := range strings.Split(parameter, ",") {
@@ -94,6 +95,14 @@ func main() {
 				default:
 					log.Printf("Err: invalid value for file-mode: %q", parts[1])
 				}
+			case "build-dependency":
+				switch strings.ToLower(parts[1]) {
+				case boolTrue, "t":
+				case boolFalse, "f":
+					buildDependency = false
+				default:
+					log.Printf("Err: invalid value for build-dependency: %q", parts[1])
+				}
 			default:
 				log.Printf("Err: unknown parameter: %q", param)
 			}
@@ -116,6 +125,10 @@ func main() {
 		if err = registry.Load(g.Request); err != nil {
 			g.Error(err, "registry: failed to load the request")
 		}
+	}
+
+	if !buildDependency {
+		g.Request.ProtoFile = g.Request.ProtoFile[len(g.Request.ProtoFile)-1:]
 	}
 
 	// Generate the encoders
