@@ -24,7 +24,7 @@ The plugin parses **protobuf** files, generates an **ast**, and walks a local **
 
 ## Web editor
 
-![Web editor screenshot](https://github.com/moul/protoc-gen-gotemplate/raw/master/assets/web-editor.jpg)
+![Web editor screenshot](https://github.com/Rosaniline/protoc-gen-gotemplate/raw/master/assets/web-editor.jpg)
 
 [Demo server](http://protoc-gen-gotemplate.m.42.am/)
 
@@ -134,7 +134,7 @@ See the project helpers for the complete list.
 
 * Install the **Go** compiler and tools from https://golang.org/doc/install
 * Install **protobuf**: `go get -u github.com/golang/protobuf/{proto,protoc-gen-go}`
-* Install **protoc-gen-gotemplate**: `go get -u moul.io/protoc-gen-gotemplate`
+* Install **protoc-gen-gotemplate**: `go get -u github.com/Rosaniline/protoc-gen-gotemplate`
 
 ## Docker
 
